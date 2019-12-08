@@ -1,0 +1,40 @@
+﻿@model spmPRYFasttasty.Models.spmINGtIngrediente
+@{
+    ViewBag.Title = "AgregarEditar";
+}
+<center><h2>Registrar Ingrediente</h2></center>
+<br />
+@using (Html.BeginForm("Guardar", "spmClsIngrediente", FormMethod.Post, new { id = "frm-ingrediente" }))
+{
+    @Html.HiddenFor(x => x.INGid)
+    <div class="form-group row">
+        <div class="form-group">
+            @Html.Label("ID: ")
+            @Html.TextBoxFor(x => x.INGid, new { @class = "form-control", disabled = true })
+        </div>
+        <div class="form-group">
+            @Html.Label("NOMBRE: ")
+            @Html.TextBoxFor(x => x.INGnombre, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.INGnombre, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.Label("UNIDAD: ")
+            @Html.TextBoxFor(x => x.INGunidad_medida, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.INGunidad_medida, null, new { @class = "text-danger" })
+        </div>
+        @*<div class="form-group">
+                @Html.Label("FOTO REFERENCIAL:")
+                <input type="file" name="foto" class="form-control" />
+            </div>*@
+        <div class="form-group">
+            @Html.Label("FOTO REFERENCIAL: ")
+            @Html.TextBoxFor(x => x.INGfoto, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.INGfoto, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        @*<a href="~/spmClsIngrediente" class="btn btn-danger">Cancelar</a>*@
+    </div>
+}

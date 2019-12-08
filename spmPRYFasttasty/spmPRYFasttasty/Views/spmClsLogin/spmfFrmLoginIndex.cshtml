@@ -1,0 +1,114 @@
+﻿@model spmPRYFasttasty.Models.spmUSUtUsuario
+
+@{
+    Layout = null;
+    string controlador = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+
+    spmPRYFasttasty.Models.spmUSUtUsuario usuario = new spmPRYFasttasty.Models.spmUSUtUsuario().Obtener(
+        spmPRYFasttasty.Models.spmClsSessionHelper.GetUser());
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Autenticar Usuario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/Source/Login/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    @*<link href="~/Source/Login/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+    <!--===============================================================================================-->
+    <link href="~/Source/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Source/Login/vendor/animate/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Source/Login/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Source/Login/vendor/select2/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Source/Login/css/util.css" rel="stylesheet" />
+    <link href="~/Source/Login/css/main.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!-- Global CSS -->
+    <link href="~/Contenido/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- //font -->
+    <script src="~/Contenido/js/login/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="limiter" id="login">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="~/Archivos/img-01.png" alt="IMG">
+                </div>
+                @using (Html.BeginForm("Validar", "spmClsLogin", FormMethod.Post))
+                {
+                    <form class="login100-form validate-form">
+                        <span class="login100-form-title">
+                            Autenticacion de Usuario
+                        </span>
+
+                        <div class="wrap-input100 validate-input" data-validate="Ingrese su nombre de usuario">
+                            <input class="input100" type="text" name="Usuario" placeholder="Nombre de Usuario" required>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Ingrese su contraseña">
+                            <input class="input100" type="password" name="Password" placeholder="Contraseña" required>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <br>
+
+                        <div class="text-center cta-container">
+                            <button data-ajax="true" type="submit" class="btn btn-info btn-cta">
+                                <i class="fa fa-sign-in"></i>Iniciar Sesion
+                            </button>
+                        </div>
+
+                        <div class="text-center p-t-136">
+                            <p>¿No tienes una cuenta? Crea una</p>
+                            <a class="btn btn-info btn-cta" href="~/spmClsLogin/spmfFrmLoginRegistrar">
+                                <i class="fa fa-user-plus"></i>
+                                Registrarse
+                            </a>
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="~/Scripts/bootstrap.min.js" type="text/css" media="all" />
+
+    <!--ResponseModel - Login-->
+    <script src="~/Contenido/js/login/ini.js"></script>
+    <script src="~/Contenido/js/login/jquery.form.js"></script>
+    <script src="~/Contenido/js/login/jquery.validate.min.js"></script>
+    <script src="~/Contenido/js/login/jquery.validate.unobtrusive.min.js"></script>
+
+    <!--===============================================================================================-->
+    @*<script src="~/Source/Login/vendor/jquery/jquery-3.2.1.min.js"></script>*@
+    <!--===============================================================================================-->
+    <script src="~/Source/Login/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Source/Login/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Source/Login/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Source/Login/vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/Source/Login/js/main.js"></script>
+</body>
+</html>

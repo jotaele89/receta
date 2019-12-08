@@ -1,0 +1,427 @@
+﻿
+@{
+    Layout = null;
+    string controlador = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+
+    spmPRYFasttasty.Models.spmUSUtUsuario usuario = new spmPRYFasttasty.Models.spmUSUtUsuario().Obtener(
+        spmPRYFasttasty.Models.spmClsSessionHelper.GetUser());
+}
+<head>
+    <title>Sistema Planificador de Menú</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Delish Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/Contenido/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Contenido/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Contenido/css/style.css" rel="stylesheet" />
+    <!--web-fonts-->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+<body>
+    <!-- banner -->
+    <div class="banner" id="home">
+        <!-- header -->
+        <div class="banner-top">
+            <div class="social-bnr-agileits">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="contact-bnr-w3-agile">
+                <ul>
+                    <li><i class="fa fa-user" aria-hidden="true"></i>@usuario.USUapellido,@usuario.USUnombre (@usuario.USUnombre_usuario)</li>
+                    <li>
+                        <input class="search_box" type="checkbox" id="search_box">
+                        <label class="icon-search" for="search_box"><a class="glyphicon glyphicon-user" href="~/spmClsPerfil/spmfFrmPerfilIndex" aria-hidden="true"></a></label>
+                        &nbsp;
+                        <label class="icon-search" for="search_box"><a class="glyphicon glyphicon-log-out" href="~/spmClsLogin/logout" aria-hidden="true" onclick="return confirm('¿Esta seguro de cerrar sesion de usuario?');"></a></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <header>
+            <div class="container">
+
+                <!-- navigation -->
+                <div class="w3_navigation">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header navbar-left">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <center>
+                                <div class="w3_navigation_pos">
+                                    <h1><a href="~/Home/Index"><span>F</span>ast <span>T</span>asty</a></h1>
+                                </div>
+                            </center>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                            <nav class="menu menu--miranda" style="width:auto !important;">
+                                <ul class="nav navbar-nav menu__list">
+                                    <li class="menu__item menu__item--current"><a href="~/Home/Index" class="glyphicon glyphicon-home"></a></li>
+                                    <li class="menu__item" style="margin-left:-15px"><a href="~/spmClsReceta/FrmRecetaPrincipal" class="menu__link">RECETAS</a></li>
+                                    <li class="menu__item" style="margin-left:-15px"><a href="~/spmClsIngrediente/Index" class="menu__link">INGREDIENTES</a></li>
+                                    <li class="menu__item"> <a href="~/spmClsUsuario/spmfFrmUsuarioIndex" class="menu__link">USUARIOS</a></li>
+                                    <li class="menu__item" style="margin-left:-15px"><a href="~/spmClsPlanificacion/Index" class="menu__link">PLANIFICADOR</a></li>
+                                    <li class="menu__item" style="margin-left:-15px"><a href="~/spmClsPadecimientoSalud/Index" class="menu__link">PAD. DE SALUD</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+                <div class="clearfix"></div>
+                <!-- //navigation -->
+            </div>
+        </header>
+        <!-- //header -->
+        <!-- banner-text -->
+        <div class="banner-text">
+            <h2>Sistema Planificador de Menú</h2>
+            <div class="book-form">
+                <!-- gallery -->
+                @*<div class="gallery-ban" id="gallery">*@
+                <div class="container">
+                    <ul id="flexiselDemo1">
+                        <li>
+                            <div class="wthree_testimonials_grid_main">
+
+                                <img src="~/Contenido/images/p1.jpg" alt=" " class="img-responsive" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wthree_testimonials_grid_main">
+
+                                <img src="~/Contenido/images/p2.jpg" alt=" " class="img-responsive" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wthree_testimonials_grid_main">
+
+                                <img src="~/Contenido/images/p3.jpg" alt=" " class="img-responsive" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wthree_testimonials_grid_main">
+
+                                <img src="~/Contenido/images/p6.jpg" alt=" " class="img-responsive" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wthree_testimonials_grid_main">
+
+                                <img src="~/Contenido/images/p4.jpg" alt=" " class="img-responsive" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wthree_testimonials_grid_main">
+
+                                <img src="~/Contenido/images/p5.jpg" alt=" " class="img-responsive" />
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                @*</div>*@
+                <!-- //gallery -->
+            </div>
+        </div>
+
+    </div>
+    <!-- //banner -->
+    <div class="ab-w3l-about">
+        <div class="container">
+            <h3 class="tittle-w3"><span>Welcome to Our</span> Fast Tasty</h3>
+            <p class="para-w3l">Lorem Ipsum is simply dummy text of the printing and typesetting industry. ever since the 1500s.Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores hasellusMaecenas ac hendrerit purus. Lorem ipsum dolor sit amet.Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            <p><a class="read" href="single.html">Read More</a></p>
+        </div>
+    </div>
+    <div class="about" id="about">
+        <div class="col-md-6 ab-w3-agile-info">
+            <div class="ab-w3-agile-info-text">
+                <h3 class="tittle-w3">Acerca de<span> Nosotros</span></h3>
+                <p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.when an unknown printer took a galley of type and scrambled it to make a type specimen book.Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.when an unknown printer took  Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet</p>
+                <div class="about-read">
+                    <a href="single.html">Leer Mas</a>
+                </div>
+            </div>
+            <div class="ab-w3-agile-inner">
+                <div class="col-md-6 ab-w3-agile-part">
+                    <h4>Handling your needs with care</h4>
+                    <p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit. a galley of type and scrambled it to make a type specimen book. Proin ultricies vestibulum velit.</p>
+                </div>
+                <div class="col-md-6 ab-w3-agile-part two">
+                    <h4>Best recipes with best ingredients</h4>
+                    <p class="para-w3l">Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit., a galley of type and scrambled it to make a type specimen book. Proin ultricies vestibulum velit.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-md-6 ab-w3-agile-img">
+
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+    <!--blogs-->
+    
+    <!--//blogs-->
+    <!--count-->
+    <div class="count-agileits">
+        <div id="particles-js"></div>
+
+        <div class="count-grids">
+            <h3 class="tittle-w3">Handling <span>your needs</span> with care</h3>
+            <div class="count-bgcolor-w3ls">
+                <div class="col-md-4 count-grid">
+                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                    <div class="count hvr-bounce-to-bottom">
+                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1052' data-delay='.5' data-increment="100">1052</div>
+                        <span></span>
+                        <h5>Products available</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 count-grid">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <div class="count hvr-bounce-to-bottom">
+                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='372' data-delay='.5' data-increment="100">372</div>
+                        <span></span>
+                        <h5>Clients come back</h5>
+                    </div>
+                </div>
+                <div class="col-md-4 count-grid">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    <div class="count hvr-bounce-to-bottom">
+                        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='105209' data-delay='.5' data-increment="100">105209</div>
+                        <span></span>
+                        <h5>Site members</h5>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--count-->
+    <!--services-section-->
+    <div class="services-w3layouts" id="services">
+        <!-- //Stats -->
+        <div class="col-md-6 agitsworkw3ls-grid ">
+            <h3 class="tittle-w3"><span>Always</span> fresh <span>& </span>delicious <span>food</span></h3>
+            <p class="para-w3l">Gourmet is a full-service catering and event planning company dedicated to providing you with exquisite cuisine and fantastic customer service. We offer a variety of menus and design options, for everything from box lunches to full-service plated dinners.</p>
+            <div class="services-left-w3-agile">
+                <h3 class="tittle-w3 sub-head"><span>Our </span>Menu</h3>
+                <ul>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>BEVERAGES</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>BREAKFASTS</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>LUNCH BUFFETS</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>DINNER BUFFETS</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>PARTY TRAYS</li>
+                </ul>
+            </div>
+            <div class="services-right-w3-agile">
+                <h3 class="tittle-w3 sub-head"><span>Catering</span> for</h3>
+                <ul>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>GRADUATION PARTY</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>WEDDING PARTY</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>BRIDAL SHOWER</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>BIRTHDAY PARTY</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>ANNIVERSARY</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-6 agitsworkw3ls-grid-2">
+            <div class="info-imgs">
+                <ul>
+                    <li>
+                        <div class="gallery-grid1">
+                            <a href="single.html"><img src="~/Contenido/images/s1.jpg" alt=" " class="img-responsive"></a>
+                            <div class="p-mask">
+                                <h4><span>D</span>elish <span>F</span>ood</h4>
+                                <p>Neque porro quisquam est, qui dolorem ipsum.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery-grid1">
+                            <a href="single.html"><img src="~/Contenido/images/s2.jpg" alt=" " class="img-responsive"></a>
+                            <div class="p-mask">
+                                <h4><span>D</span>elish <span>F</span>ood</h4>
+                                <p>Neque porro quisquam est, qui dolorem ipsum.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery-grid1">
+                            <a href="single.html"><img src="~/Contenido/images/s3.jpg" alt=" " class="img-responsive"></a>
+                            <div class="p-mask">
+                                <h4><span>D</span>elish <span>F</span>ood</h4>
+                                <p>Neque porro quisquam est, qui dolorem ipsum.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery-grid1">
+                            <a href="single.html"><img src="~/Contenido/images/s4.jpg" alt=" " class="img-responsive"></a>
+                            <div class="p-mask">
+                                <h4><span>D</span>elish <span>F</span>ood</h4>
+                                <p>Neque porro quisquam est, qui dolorem ipsum.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+        <!-- //Stats -->
+        <div class="clearfix"></div>
+    </div>
+    <!--//services-section-->
+    <!-- mail -->
+    
+    <!-- //mail -->
+    <!-- Footer -->
+
+    <div class="copyright-wthree">
+        <p>&copy; 2019 Fast Tasty . Todos los derechos reservados |
+    </div>
+    <!-- Footer -->
+    <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- //smooth scrolling -->
+    <script type="text/javascript" src="~/Contenido/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="~/Contenido/js/numscroller-1.0.js"></script>
+    <script src="~/Contenido/js/particles.js"></script>
+    <script src="~/Contenido/js/app.js"></script>
+    <!--gallery-->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 4,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 3
+                    }
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="~/Contenido/js/jquery.flexisel.js"></script>
+    <!--gallery-->
+    <!-- Dropdown-Menu-JavaScript -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //Dropdown-Menu-JavaScript -->
+    <!-- Calendar -->
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="~/Contenido/js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+        });
+    </script>
+    <!-- //Calendar -->
+    <!-- //smooth scrolling -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/numscroller-1.0.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!--js for bootstrap working-->
+    <script src="~/Contenido/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <!-- script-for-menu -->
+    <script>
+
+        $("span.menu").click(function () {
+            $(".top-nav ul").slideToggle("slow", function () {
+            });
+        });
+    </script>
+    <!-- script-for-menu -->
+</body>
+
+
+<script>
+  $.ajax({
+        type: "POST",
+      url: "../spmClsIngrediente/listado",
+      dataType: JSON,
+        
+        success: function (response) {
+
+
+            console.log(response);
+            
+        }
+    });
+</script>
+

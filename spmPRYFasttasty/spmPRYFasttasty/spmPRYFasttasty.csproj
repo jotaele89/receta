@@ -1,0 +1,596 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{156099B8-7806-4EA7-8855-826792943971}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>spmPRYFasttasty</RootNamespace>
+    <AssemblyName>spmPRYFasttasty</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Archivos\1-1.jpg" />
+    <Content Include="Archivos\222222.PNG" />
+    <Content Include="Archivos\3-3.jpg" />
+    <Content Include="Archivos\AngelaB.png" />
+    <Content Include="Archivos\bann.jpg" />
+    <Content Include="Archivos\bann2.jpg" />
+    <Content Include="Archivos\banner.jpg" />
+    <Content Include="Archivos\DMUMT.jpg" />
+    <Content Include="Archivos\DMUMT2.jpg" />
+    <Content Include="Archivos\EduardoA.png" />
+    <Content Include="Archivos\FiorellaS.png" />
+    <Content Include="Archivos\fotorec %282%29.png" />
+    <Content Include="Archivos\fotorec %286%29.png" />
+    <Content Include="Archivos\img-01.png" />
+    <Content Include="Archivos\JoseLuisC.png" />
+    <Content Include="Archivos\LeydiH.png" />
+    <Content Include="Archivos\login_usuario.png" />
+    <Content Include="Archivos\mer sisetmas gestion.PNG" />
+    <Content Include="Archivos\MER.PNG" />
+    <Content Include="Archivos\MireyaP.png" />
+    <Content Include="Archivos\nuevo_usuario.png" />
+    <Content Include="Archivos\redesiii_examenu1.jpg" />
+    <Content Include="Archivos\side.jpg" />
+    <Content Include="Archivos\signin-image.jpg" />
+    <Content Include="Archivos\signup-image.jpg" />
+    <Content Include="Contenido\css\bootstrap.css" />
+    <Content Include="Contenido\css\bootstrap.min.css" />
+    <Content Include="Contenido\css\font-awesome.css" />
+    <Content Include="Contenido\css\jquery-ui.css" />
+    <Content Include="Contenido\css\lightbox.css" />
+    <Content Include="Contenido\css\style.css" />
+    <Content Include="Contenido\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contenido\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Contenido\images\ab.jpg" />
+    <Content Include="Contenido\images\admin.jpg" />
+    <Content Include="Contenido\images\arr.png" />
+    <Content Include="Contenido\images\ba1.jpg" />
+    <Content Include="Contenido\images\back.png" />
+    <Content Include="Contenido\images\banner.jpg" />
+    <Content Include="Contenido\images\bck.png" />
+    <Content Include="Contenido\images\bl1.jpg" />
+    <Content Include="Contenido\images\bl2.jpg" />
+    <Content Include="Contenido\images\c-arrows.png" />
+    <Content Include="Contenido\images\close.png" />
+    <Content Include="Contenido\images\f1.jpg" />
+    <Content Include="Contenido\images\frwd.png" />
+    <Content Include="Contenido\images\g1.jpg" />
+    <Content Include="Contenido\images\g2.jpg" />
+    <Content Include="Contenido\images\g3.jpg" />
+    <Content Include="Contenido\images\g4.jpg" />
+    <Content Include="Contenido\images\g5.jpg" />
+    <Content Include="Contenido\images\g6.jpg" />
+    <Content Include="Contenido\images\g7.jpg" />
+    <Content Include="Contenido\images\g8.jpg" />
+    <Content Include="Contenido\images\g9.jpg" />
+    <Content Include="Contenido\images\l1.jpg" />
+    <Content Include="Contenido\images\l2.jpg" />
+    <Content Include="Contenido\images\l3.jpg" />
+    <Content Include="Contenido\images\next.png" />
+    <Content Include="Contenido\images\p1.jpg" />
+    <Content Include="Contenido\images\p2.jpg" />
+    <Content Include="Contenido\images\p3.jpg" />
+    <Content Include="Contenido\images\p4.jpg" />
+    <Content Include="Contenido\images\p5.jpg" />
+    <Content Include="Contenido\images\p6.jpg" />
+    <Content Include="Contenido\images\s1.jpg" />
+    <Content Include="Contenido\images\s2.jpg" />
+    <Content Include="Contenido\images\s3.jpg" />
+    <Content Include="Contenido\images\s4.jpg" />
+    <Content Include="Contenido\images\s5.jpg" />
+    <Content Include="Contenido\images\s6.jpg" />
+    <Content Include="Contenido\images\search.png" />
+    <Content Include="Contenido\images\t1.jpg" />
+    <Content Include="Contenido\images\t2.jpg" />
+    <Content Include="Contenido\images\t3.jpg" />
+    <Content Include="Contenido\images\t4.jpg" />
+    <Content Include="Contenido\images\tick.png" />
+    <Content Include="Contenido\js\app.js" />
+    <Content Include="Contenido\js\bootstrap.js" />
+    <Content Include="Contenido\js\bootstrap.min.js" />
+    <Content Include="Contenido\js\easing.js" />
+    <Content Include="Contenido\js\jquery-2.1.4.min.js" />
+    <Content Include="Contenido\js\jquery-ui.js" />
+    <Content Include="Contenido\js\jquery.flexisel.js" />
+    <Content Include="Contenido\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Contenido\js\login\bootstrap.bundle.js" />
+    <Content Include="Contenido\js\login\bootstrap.bundle.min.js" />
+    <Content Include="Contenido\js\login\bootstrap.js" />
+    <Content Include="Contenido\js\login\bootstrap.min.js" />
+    <Content Include="Contenido\js\login\ini.js" />
+    <Content Include="Contenido\js\login\jquery-3.3.0.min.js" />
+    <Content Include="Contenido\js\login\jquery-3.4.1.min.js" />
+    <Content Include="Contenido\js\login\jquery.form.js" />
+    <Content Include="Contenido\js\login\jquery.js" />
+    <Content Include="Contenido\js\login\jquery.validate.min.js" />
+    <Content Include="Contenido\js\login\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Contenido\js\login\js_highchart\exporting.js" />
+    <Content Include="Contenido\js\login\js_highchart\highcharts-3d.js" />
+    <Content Include="Contenido\js\login\js_highchart\highcharts-more.js" />
+    <Content Include="Contenido\js\login\js_highchart\highcharts.js" />
+    <Content Include="Contenido\js\login\js_highchart\offline-exporting.js" />
+    <Content Include="Contenido\js\modernizr.custom.js" />
+    <Content Include="Contenido\js\move-top.js" />
+    <Content Include="Contenido\js\numscroller-1.0.js" />
+    <Content Include="Contenido\js\particles.js" />
+    <Content Include="Contenido\js\responsiveslides.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Imagenes\Recetas\Receta1.png" />
+    <Content Include="Imagenes\Recetas\Receta10.png" />
+    <Content Include="Imagenes\Recetas\Receta11.png" />
+    <Content Include="Imagenes\Recetas\Receta12.png" />
+    <Content Include="Imagenes\Recetas\Receta13.png" />
+    <Content Include="Imagenes\Recetas\Receta14.png" />
+    <Content Include="Imagenes\Recetas\Receta15.png" />
+    <Content Include="Imagenes\Recetas\Receta16.png" />
+    <Content Include="Imagenes\Recetas\Receta17.png" />
+    <Content Include="Imagenes\Recetas\Receta18.png" />
+    <Content Include="Imagenes\Recetas\Receta19.png" />
+    <Content Include="Imagenes\Recetas\Receta2.png" />
+    <Content Include="Imagenes\Recetas\Receta3.png" />
+    <Content Include="Imagenes\Recetas\Receta4.png" />
+    <Content Include="Imagenes\Recetas\Receta5.png" />
+    <Content Include="Imagenes\Recetas\Receta6.png" />
+    <Content Include="Imagenes\Recetas\Receta7.png" />
+    <Content Include="Imagenes\Recetas\Receta8.png" />
+    <Content Include="Imagenes\Recetas\Receta9.png" />
+    <Content Include="IngredientesFotos\Aceite_vegetal.png" />
+    <Content Include="IngredientesFotos\Agua.png" />
+    <Content Include="IngredientesFotos\Ajo_molido.png" />
+    <Content Include="IngredientesFotos\Arroz.png" />
+    <Content Include="IngredientesFotos\Arándanos rojos.png" />
+    <Content Include="IngredientesFotos\Arándanos.png" />
+    <Content Include="IngredientesFotos\Atún.png" />
+    <Content Include="IngredientesFotos\Avena.png" />
+    <Content Include="IngredientesFotos\Azúcar.png" />
+    <Content Include="IngredientesFotos\Berenjena.png" />
+    <Content Include="IngredientesFotos\Betabeles.png" />
+    <Content Include="IngredientesFotos\Brócoli.png" />
+    <Content Include="IngredientesFotos\Calabaza.png" />
+    <Content Include="IngredientesFotos\Camote.png" />
+    <Content Include="IngredientesFotos\Carne_cerdo.png" />
+    <Content Include="IngredientesFotos\Carne_molida.png" />
+    <Content Include="IngredientesFotos\Carne_res.png" />
+    <Content Include="IngredientesFotos\Cebolla.png" />
+    <Content Include="IngredientesFotos\Cereza.png" />
+    <Content Include="IngredientesFotos\Chicharos.png" />
+    <Content Include="IngredientesFotos\Chiles_campana.png" />
+    <Content Include="IngredientesFotos\Chiles_jalapeño.png" />
+    <Content Include="IngredientesFotos\Chiles_verdes.png" />
+    <Content Include="IngredientesFotos\Coles_bruselas.png" />
+    <Content Include="IngredientesFotos\Coliflor.png" />
+    <Content Include="IngredientesFotos\Comino_molido.png" />
+    <Content Include="IngredientesFotos\Consomé_vegetales.png" />
+    <Content Include="IngredientesFotos\Culantro.png" />
+    <Content Include="IngredientesFotos\Duraznos.png" />
+    <Content Include="IngredientesFotos\Elote.png" />
+    <Content Include="IngredientesFotos\Esparrago.png" />
+    <Content Include="IngredientesFotos\Espinacas.png" />
+    <Content Include="IngredientesFotos\Frambuesas.png" />
+    <Content Include="IngredientesFotos\Fresas.png" />
+    <Content Include="IngredientesFotos\Frijoles.png" />
+    <Content Include="IngredientesFotos\Frijoles_negros.png" />
+    <Content Include="IngredientesFotos\Granos_integrales.png" />
+    <Content Include="IngredientesFotos\Harina.png" />
+    <Content Include="IngredientesFotos\Hierbas_especias.png" />
+    <Content Include="IngredientesFotos\Hongos.png" />
+    <Content Include="IngredientesFotos\Huevos.png" />
+    <Content Include="IngredientesFotos\Jengibre_molido.png" />
+    <Content Include="IngredientesFotos\Jugo_limón_verde.png" />
+    <Content Include="IngredientesFotos\Laurel.png" />
+    <Content Include="IngredientesFotos\Leche.png" />
+    <Content Include="IngredientesFotos\Lechuga.png" />
+    <Content Include="IngredientesFotos\Lentejas.png" />
+    <Content Include="IngredientesFotos\Manzanas.png" />
+    <Content Include="IngredientesFotos\Mayonesa.png" />
+    <Content Include="IngredientesFotos\Nabos.png" />
+    <Content Include="IngredientesFotos\Naranja.png" />
+    <Content Include="IngredientesFotos\Orégano.png" />
+    <Content Include="IngredientesFotos\Papa.png" />
+    <Content Include="IngredientesFotos\Pasta_integral.png" />
+    <Content Include="IngredientesFotos\Pastinacas.png" />
+    <Content Include="IngredientesFotos\Pavo.png" />
+    <Content Include="IngredientesFotos\Peras.png" />
+    <Content Include="IngredientesFotos\Pimienta.png" />
+    <Content Include="IngredientesFotos\Pimientos_picantes.png" />
+    <Content Include="IngredientesFotos\Plátanos.png" />
+    <Content Include="IngredientesFotos\Pollo.png" />
+    <Content Include="IngredientesFotos\Queso_parmesano.png" />
+    <Content Include="IngredientesFotos\Repollo.png" />
+    <Content Include="IngredientesFotos\Ruibarbo.png" />
+    <Content Include="IngredientesFotos\Rábanos.png" />
+    <Content Include="IngredientesFotos\Sal.png" />
+    <Content Include="IngredientesFotos\Salmon.png" />
+    <Content Include="IngredientesFotos\Salsa_picante.png" />
+    <Content Include="IngredientesFotos\Sandia.png" />
+    <Content Include="IngredientesFotos\Tofu.png" />
+    <Content Include="IngredientesFotos\Tomate.png" />
+    <Content Include="IngredientesFotos\Tortilla_harina.png" />
+    <Content Include="IngredientesFotos\Uvas.png" />
+    <Content Include="IngredientesFotos\Vinagre.png" />
+    <Content Include="IngredientesFotos\Yogurt.png" />
+    <Content Include="IngredientesFotos\Zanahorias.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Source\LoginRegistrar\css\main.css" />
+    <Content Include="Source\LoginRegistrar\images\bg-heading-02.jpg" />
+    <Content Include="Source\LoginRegistrar\js\global.js" />
+    <Content Include="Source\LoginRegistrar\vendor\datepicker\daterangepicker.css" />
+    <Content Include="Source\LoginRegistrar\vendor\datepicker\daterangepicker.js" />
+    <Content Include="Source\LoginRegistrar\vendor\datepicker\moment.min.js" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="Source\LoginRegistrar\vendor\jquery\jquery.js" />
+    <Content Include="Source\LoginRegistrar\vendor\jquery\jquery.min.js" />
+    <Content Include="Source\LoginRegistrar\vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="Source\LoginRegistrar\vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Source\LoginRegistrar\vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Source\LoginRegistrar\vendor\select2\select2.min.css" />
+    <Content Include="Source\LoginRegistrar\vendor\select2\select2.min.js" />
+    <Content Include="Source\Login\css\main.css" />
+    <Content Include="Source\Login\css\util.css" />
+    <Content Include="Source\Login\estilosplantilla.css" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Source\Login\fonts\montserrat\OFL.txt" />
+    <Content Include="Source\Login\images\icons\favicon.ico" />
+    <Content Include="Source\Login\images\img-01.png" />
+    <Content Include="Source\Login\js\main.js" />
+    <Content Include="Source\Login\vendor\animate\animate.css" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Source\Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Source\Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Source\Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Source\Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Source\Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Source\Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Source\Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Source\Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Source\Login\vendor\select2\select2.css" />
+    <Content Include="Source\Login\vendor\select2\select2.js" />
+    <Content Include="Source\Login\vendor\select2\select2.min.css" />
+    <Content Include="Source\Login\vendor\select2\select2.min.js" />
+    <Content Include="Source\Login\vendor\tilt\tilt.jquery.min.js" />
+    <Content Include="Source\RegistrarUsuario\EstilosPreview2.css" />
+    <Content Include="Source\RegistrarUsuario\EstilosPreview.css" />
+    <Content Include="Source\RegistrarUsuario\font-awesome.min.css" />
+    <Content Include="Source\RegistrarUsuario\PreviewFoto.js" />
+    <Content Include="Source\RegistrarUsuario\style.css" />
+    <Content Include="Source\RegitrarUsuario2\css\font-awesome.css" />
+    <Content Include="Source\RegitrarUsuario2\css\jquery-ui.css" />
+    <Content Include="Source\RegitrarUsuario2\css\style.css" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontawesome-webfont.svg" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontello.svg" />
+    <Content Include="Source\RegitrarUsuario2\images\bann2.jpg" />
+    <Content Include="Source\RegitrarUsuario2\images\c-arrows.png" />
+    <Content Include="Source\RegitrarUsuario2\images\side.png" />
+    <Content Include="Source\RegitrarUsuario2\js\jquery-2.1.4.min.js" />
+    <Content Include="Source\RegitrarUsuario2\js\jquery-ui.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\spmClsReceta\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\spmClsIngredienteController.cs" />
+    <Compile Include="Controllers\spmClsLoginController.cs" />
+    <Compile Include="Controllers\spmClsPadecimientoSaludController.cs" />
+    <Compile Include="Controllers\spmClsPerfilController.cs" />
+    <Compile Include="Controllers\spmClsPlanificacionController.cs" />
+    <Compile Include="Controllers\spmClsRecetaController.cs" />
+    <Compile Include="Controllers\spmClsRecetaIngredienteController.cs" />
+    <Compile Include="Controllers\spmClsUsuarioNuevoController.cs" />
+    <Compile Include="Controllers\spmClsUsuarioController.cs" />
+    <Compile Include="Controllers\spmClsValoracionController.cs" />
+    <Compile Include="Filters\AdminFilters.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Modelo_Sistema.cs" />
+    <Compile Include="Models\spmClsHashHelper.cs" />
+    <Compile Include="Models\spmClsResponseModel.cs" />
+    <Compile Include="Models\spmClsSessionHelper.cs" />
+    <Compile Include="Models\spmINGtIngrediente.cs" />
+    <Compile Include="Models\spmPADtPadecimiento_Salud.cs" />
+    <Compile Include="Models\spmPLApPlanificacion.cs" />
+    <Compile Include="Models\spmRECpReceta.cs" />
+    <Compile Include="Models\spmRINpReceta_Ingrediente.cs" />
+    <Compile Include="Models\spmUSUtUsuario.cs" />
+    <Compile Include="Models\spmVALtValoracion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Contenido\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contenido\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contenido\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contenido\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contenido\fonts\FontAwesome.otf" />
+    <Content Include="Contenido\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Contenido\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Contenido\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Contenido\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Views\spmClsReceta\FrmRecetaPrincipal.cshtml" />
+    <Content Include="Views\spmClsReceta\FrmRecetaAgregarEditar.cshtml" />
+    <Content Include="Views\spmClsReceta\RecetaIngrediente.cshtml" />
+    <Content Include="Views\spmClsIngrediente\Index.cshtml" />
+    <Content Include="Views\spmClsIngrediente\AgregarEditar.cshtml" />
+    <Content Include="Views\spmClsUsuario\spmfFrmUsuarioAgregarEditar.cshtml" />
+    <Content Include="Views\spmClsUsuario\spmfFrmUsuarioIndex.cshtml" />
+    <Content Include="Views\spmClsLogin\spmfFrmLoginIndex.cshtml" />
+    <Content Include="Views\spmClsLogin\spmfFrmLoginRegistrar.cshtml" />
+    <Content Include="Views\spmClsPerfil\spmfFrmPerfilIndex.cshtml" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Source\LoginRegistrar\vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="Source\LoginRegistrar\vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Source\LoginRegistrar\vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Source\LoginRegistrar\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Source\LoginRegistrar\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Source\Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Source\Login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Source\Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Source\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontawesome-webfont.eot" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontawesome-webfont.woff" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Source\RegitrarUsuario2\fonts\FontAwesome.otf" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontello.eot" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontello.ttf" />
+    <Content Include="Source\RegitrarUsuario2\fonts\fontello.woff" />
+    <Content Include="Views\spmClsReceta\FrmRecetaIngrediente.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\spmClsPadecimientoSalud\" />
+    <Folder Include="Views\spmClsPlanificacion\" />
+    <Folder Include="Views\spmClsRecetaIngrediente\" />
+    <Folder Include="Views\spmClsValoracion\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2478</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2478/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

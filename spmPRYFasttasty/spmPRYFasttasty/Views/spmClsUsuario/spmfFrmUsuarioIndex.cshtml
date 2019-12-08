@@ -1,0 +1,41 @@
+﻿@model List<spmPRYFasttasty.Models.spmUSUtUsuario>
+@{
+    ViewBag.Title = "spmfFrmUsuarioIndex";
+}
+<h2 class="tittle-w3"><span>Gestionar </span>Usuarios</h2>
+
+<div class="team">
+    <div class="text-right cta-container">
+        <p><a class="read" href="~/spmClsUsuario/spmfFrmUsuarioAgregarEditar/" target="_blank"><i class="fa fa-user-plus"></i>Nuevo Usuario</a></p>
+    </div>
+
+    <br>
+
+    <div class="team-row">
+        @foreach (var u in Model)
+        {
+        <div class="col-md-3 team-grids wow fadeInUp animated" data-wow-delay=".5s">
+            <h5>@u.USUnombre<span> @u.USUapellido</span></h5>
+            <p>@(u.USUnombre_usuario)</p>
+            <p>@(u.USUcorreo_electronico)</p>
+
+            <div class="social-bnr-agileits about-agile">
+                <ul>
+                    <li style="visibility:hidden"></li>
+                    <li><a href="~/spmClsUsuario/spmfFrmUsuarioAgregarEditar/@u.USUid" title="Modificar"><i class="fa fa-edit" aria-hidden="true"></i></a></li>
+                    <li><a href="~/spmClsUsuario/spmfFrmUsuarioEliminar/@u.USUid" title="Eliminar" onclick="return confirm('¿Esta seguro de eliminar el registro?');"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+                    <li style="visibility:hidden"></li>
+                </ul>
+            </div>
+
+            <div class="team-img">
+                <img src="~/Archivos/@(u.USUfoto)" alt="">
+            </div>
+
+            <div class="clearfix"></div>
+            <br>
+        </div>
+        }
+        <div class="clearfix"> </div>
+    </div>
+</div>

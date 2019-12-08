@@ -1,0 +1,70 @@
+﻿@model List<spmPRYFasttasty.Models.spmINGtIngrediente>
+@{
+    ViewBag.Title = "Index";
+    //Layout = null;
+}
+<body>
+    <!-- about-top -->
+        <div class="container">
+            <h2 class="tittle-w3"> GESTIONAR  <span>    INGREDIENTES </span></h2>
+            <div class="about-section">
+                <!-- special -->
+                <div class="special">
+                    <div class="container">
+                        <div class="text-right">
+                            <a href="~/spmClsIngrediente/AgregarEditar/" class="btn btn-warning text-right"><h7>Registrar Ingrediente</h7></a>
+                        </div>
+                        <br />
+                        <div class="text-left" style="font:bold">
+                            <h2>Ingredientes Registrados</h2></a>
+                        </div>
+                        <br />
+                        <div class="main-search-box pt-3 pb-4 d-inline-block navbar-right ">
+                            <form class="form-inline search-form justify-content-center" action="" method="get">
+                                <input type="text" name="search" class="form-control search-input" style="width:300px">
+                                <button type="button" class="btn search-btn" value="Search"><i class="glyphicon glyphicon-search"></i></button>
+                            </form>
+                        </div>
+                        <br />
+                        <div class="p_recype_item_main">
+                            <div class="row p_recype_item_active">
+                                @foreach (var u in Model)
+                                {
+                                    <div class="col-md-4 col-sm-6 break snacks">
+                                        <div class="feature_item">
+                                            <div class="feature_item_inner">
+                                                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="item active">
+                                                            <img src="~/IngredientesFotos/@u.INGfoto" alt="" class="img-responsive" style="height:250px;width:350px">
+                                                            @*<div class="carousel-caption">
+                                                                    <div class="form-group">
+                                                                        <center><h3 class="title">@u.INGnombre </h3></center>
+                                                                    </div>
+                                                                </div>*@
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <center><h3 class="title">@u.INGnombre</h3></center>
+                                            <br />
+                                            <div class="pad-ver" style="align-content:center!important;">
+                                                <th style="align-content:center;">
+                                                    <a class="btn btn-secondary btn-lg" type="button" style="width:40px" href="~/spmClsIngrediente/AgregarEditar/@u.INGid" title="Editar"><i class="glyphicon glyphicon-edit"></i></a>
+                                                    <a class="btn btn-secondary btn-lg" type="button" style="width:40px" href="~/spmClsIngrediente/Eliminar/@u.INGid" title="Eliminar"
+                                                       onclick="return confirm('¿Esta seguro de eliminar este ingrediente?' @u.INGid);"><i class="glyphicon glyphicon-trash"></i></a>
+                                                </th>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- //special -->
+            </div>
+        </div>
+
+</body>

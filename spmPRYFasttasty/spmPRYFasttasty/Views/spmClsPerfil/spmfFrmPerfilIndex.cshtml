@@ -1,0 +1,49 @@
+﻿
+@model spmPRYFasttasty.Models.spmUSUtUsuario
+@{
+    ViewBag.Title = "spmfFrmPerfilIndex";
+}
+
+<h2 class="tittle-w3"><span>Mi </span>Perfil Personal</h2>
+
+@using (Html.BeginForm("Actualizar", "spmClsPerfil", FormMethod.Post, new { id = "frm-perfil" }))
+{
+    <div class="container">
+        <div class="card-body">
+            <div role="tabpanel" class="active" id="info">
+                <div class="form-group">
+                    @Html.HiddenFor(x => x.USUid)
+                    <b>@Html.Label("Nombre de Usuario:")</b>
+                    @Html.TextBoxFor(x => x.USUnombre_usuario, new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(x => x.USUnombre_usuario, null, new { @class = "text-danger" })
+
+                    <br>
+                    <center>
+                        <img src="~/Archivos/@Model.USUfoto" width="130px" height="135px">
+                    </center>
+                    <br>
+                </div>
+
+                <center>
+                    <div class="form-group">
+                        <label><b>Foto:</b></label>
+                        <input type="file" name="USUfoto" id="file" required />
+                    </div>
+                </center>
+            </div>
+        </div>
+
+
+        <br>
+
+        <div class="text-right">
+            <button data-ajax="true" class="btn btn-success" onclick="return alert('Se ha modificado los datos...');"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>Modificar</button>
+            <button class="btn btn-danger"><a href="~/spmClsUsuario/spmfFrmUsuarioIndex" style="color:#fff"><i class="glyphicon glyphicon-folder-close" aria-hidden="true"></i>Cancelar</a></button>
+        </div>
+    </div>
+
+}
+
+<br><br>
+
+<script src="~/Source/RegistrarUsuario/PreviewFoto.js"></script>

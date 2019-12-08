@@ -1,0 +1,74 @@
+﻿@model spmPRYFasttasty.Models.spmUSUtUsuario
+
+@{
+    ViewBag.Title = "spmfFrmUsuarioAgregarEditar";
+}
+
+<link href="~/Source/RegistrarUsuario/EstilosPreview2.css" rel="stylesheet" />
+
+<h2 class="tittle-w3"><span>Registrar </span>Usuario</h2>
+
+    <div class="book-form">
+        @using (Html.BeginForm("spmfFrmUsuarioGuardar", "spmClsUsuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(x => x.USUid)
+            <form action="#" method="post" class="row">
+                <div class="col form-time-w3layouts">
+                    <label><i class="fa fa-cubes" aria-hidden="true"></i> ID :</label>
+                    @Html.TextBoxFor(x => x.USUid, new { @class = "form-control", disabled = true })
+                </div>
+
+                <div class="col form-date-w3-agileits">
+                    <label><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Nombre :</label>
+                    @Html.TextBoxFor(x => x.USUnombre, new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(x => x.USUnombre, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="col form-time-w3layouts">
+                    <label><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Apellido :</label>
+                    @Html.TextBoxFor(x => x.USUapellido, new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(x => x.USUapellido, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="col form-date-w3-agileits">
+                    <label><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Nombre de Usuario :</label>
+                    @Html.TextBoxFor(x => x.USUnombre_usuario, new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(x => x.USUnombre_usuario, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="col form-time-w3layouts">
+                    <label><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp; Correo Electronico :</label>
+                    @Html.TextBoxFor(x => x.USUcorreo_electronico, new { @class = "form-control", @type = "email", required = "required" })
+                    @Html.ValidationMessageFor(x => x.USUcorreo_electronico, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="col form-date-w3-agileits">
+                    <label><i class="fa fa-lock" aria-hidden="true"></i> &nbsp; Contraseña :</label>
+                    @Html.TextBoxFor(x => x.USUcontraseña, new { @class = "form-control", @type = "password", required = "required" })
+                    @Html.ValidationMessageFor(x => x.USUcontraseña, null, new { @class = "text-danger" })
+                </div>
+                <br>
+                <div class="clearfix"></div>
+
+                <div class="col form-date-w3-agileits">
+                    <label><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp; Foto del Usuario:</label>
+                    <br>
+                    <input type="file" name="USUfoto" id="file" class="form-control" required/>
+                    <div id="preview"></div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <br><br>
+                <div class="text-center cta-container">
+                    <button type="submit"><a class="read"><i class="fa fa-save"></i>Registrar Usuario</a></button>
+                </div>
+            </form>
+
+        }
+    </div>
+    <script src="~/Source/RegistrarUsuario/PreviewFoto.js"></script>

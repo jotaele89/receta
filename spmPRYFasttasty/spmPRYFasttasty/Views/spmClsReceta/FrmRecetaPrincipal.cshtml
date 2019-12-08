@@ -1,0 +1,64 @@
+﻿@model List<spmPRYFasttasty.Models.spmRECpReceta>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="~/Contenido/css/lightbox.css">
+
+</head>
+<body>
+
+    <!-- //banner -->
+    <!-- gallery -->
+    <div class="gallery">
+        <div class="container">
+            <h3 class="tittle-w3"><span>Gestionar </span>Receta</h3>
+            <br />
+            <br />
+            <div class="text-right">
+                <a href="~/spmClsReceta/FrmRecetaAgregarEditar/" class="btn btn-warning text-right"><h7>Registrar Receta</h7></a>
+            </div>
+            <br />
+            <div class="text-right">
+                <a href="~/spmClsReceta/FrmRecetaIngrediente/" class="btn btn-warning text-right"><h7>Añadir Ingredientes</h7></a>
+            </div>
+
+
+            <div class="gallery-grids">
+                @foreach (var u in Model)
+                {
+                    <div class="col-md-4 gallery-grid wow fadeInUp animated" data-wow-delay=".5s">
+                        <div class="grid">
+                            <figure class="effect-apollo">
+                                <a class="example-image-link" href="/Imagenes/Recetas/@u.RECfoto" data-lightbox="example-set" data-title="">
+                                    <img src="/Imagenes/Recetas/@u.RECfoto" alt="" style="width:350px;height:300px" />
+                                    <figcaption>
+                                        <h3>@u.spmPADtPadecimiento_Salud.PADnombre</h3>
+                                        <p>@u.RECnombre<br>@u.RECtipo_plato</p>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <a class="btn btn-secondary btn-lg" type="button" style="width:40px" href="~/spmClsReceta/FrmRecetaAgregarEditar/@u.RECid" title="Editar"><i class="glyphicon glyphicon-edit"></i></a>
+                            <br />
+                            <a class="btn btn-secondary btn-lg" type="button" style="width:40px" href="~/spmClsReceta/Eliminar/@u.RECid" title="Eliminar"
+                               onclick="return confirm('¿Esta seguro de eliminar este ingrediente?' @u.RECid);"><i class="glyphicon glyphicon-trash"></i></a>
+
+                        </div>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Contenido/js/lightbox-plus-jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

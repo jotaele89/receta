@@ -1,0 +1,150 @@
+﻿@model spmPRYFasttasty.Models.spmUSUtUsuario
+
+@{
+    Layout = null;
+    string controlador = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+
+    spmPRYFasttasty.Models.spmUSUtUsuario usuario = new spmPRYFasttasty.Models.spmUSUtUsuario().Obtener(
+        spmPRYFasttasty.Models.spmClsSessionHelper.GetUser());
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <!-- Title Page-->
+    <title>Registrarse</title>
+    @*<link href="~/Source/Login/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+    <!-- Icons font CSS-->
+    <link href="~/Source/LoginRegistrar/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="~/Source/LoginRegistrar/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- Vendor CSS-->
+    <link href="~/Source/LoginRegistrar/vendor/select2/select2.min.css" rel="stylesheet" />
+    <link href="~/Source/LoginRegistrar/vendor/datepicker/daterangepicker.css" rel="stylesheet" />
+    <!-- Main CSS-->
+    <link href="~/Source/LoginRegistrar/css/main.css" rel="stylesheet" />
+
+    <link href="~/Source/RegistrarUsuario/EstilosPreview.css" rel="stylesheet" />
+
+    <!-- Global CSS -->
+    <link href="~/Contenido/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- //font -->
+    <script src="~/Contenido/js/login/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registrarse</h2>
+
+                    @using (Html.BeginForm("spmfFrmUsuarioGuardarNuevo", "spmClsUsuarioNuevo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.HiddenFor(x => x.USUid)
+                        <form method="POST">
+                            <div class="input-group">
+                                <span><i class="fa fa-list-ol" aria-hidden="true"></i></span>
+                                <label>ID</label>
+                                @Html.TextBoxFor(x => x.USUid, new { @class = "input--style - 2", disabled = true })
+                            </div>
+
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <label>Nombre</label>
+                                    <div class="input-group">
+                                        @Html.TextBoxFor(x => x.USUnombre, new { @class = "input--style - 2", required = "required" })
+                                        @Html.ValidationMessageFor(x => x.USUnombre, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-2">
+                                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <label>Apellido</label>
+                                    <div class="input-group">
+                                        @Html.TextBoxFor(x => x.USUapellido, new { @class = "input--style - 2", required = "required" })
+                                        @Html.ValidationMessageFor(x => x.USUapellido, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                <label>Nombre de Usuario</label>
+                                @Html.TextBoxFor(x => x.USUnombre_usuario, new { @class = "input--style - 2", required = "required" })
+                                @Html.ValidationMessageFor(x => x.USUnombre_usuario, null, new { @class = "text-danger" })
+                            </div>
+
+                            <div class="input-group">
+                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                <label>Correo Electronico</label>
+                                @Html.TextBoxFor(x => x.USUcorreo_electronico, new { @class = "input--style - 2", @type = "email", required = "required" })
+                                @Html.ValidationMessageFor(x => x.USUcorreo_electronico, null, new { @class = "text-danger" })
+                            </div>
+
+                            <div class="input-group">
+                                <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                <label>Contraseña</label>
+                                @Html.TextBoxFor(x => x.USUcontraseña, new { @class = "input--style - 2", @type = "password", required = "required" })
+                                @Html.ValidationMessageFor(x => x.USUcontraseña, null, new { @class = "text-danger" })
+                            </div>
+
+                            <div class="input-group" style="width:100%">
+                                <span><i class="fa fa-image" aria-hidden="true"></i></span>
+                                <label>Foto del Usuario</label>
+                                <div id="preview"></div>
+
+                                <br>
+
+                                <input type="file" name="USUfoto" id="file" class="form-control" required/>
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <br><br>
+
+                            <center>
+                                <div class="p-t-30">
+                                    <button class="btn btn--radius btn--green" type="submit"><i class="fa fa-save"></i>Registrar Usuario</button>
+                                </div>
+                            </center>
+
+                            <br><br>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" href="~/Scripts/bootstrap.min.js" type="text/css" media="all" />
+
+    <!--ResponseModel - Login-->
+    <script src="~/Contenido/js/login/ini.js"></script>
+    <script src="~/Contenido/js/login/jquery.form.js"></script>
+    <script src="~/Contenido/js/login/jquery.validate.min.js"></script>
+    <script src="~/Contenido/js/login/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- Jquery JS-->
+    <script src="~/Source/LoginRegistrar/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="~/Source/LoginRegistrar/vendor/select2/select2.min.js"></script>
+    <script src="~/Source/LoginRegistrar/vendor/datepicker/moment.min.js"></script>
+    <script src="~/Source/LoginRegistrar/vendor/datepicker/daterangepicker.js"></script>
+    <!-- Main JS-->
+    <script src="~/Source/LoginRegistrar/js/global.js"></script>
+
+    <script src="~/Source/RegistrarUsuario/PreviewFoto.js"></script>
+</body>
+</html>
+<!-- end document-->
